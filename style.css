@@ -1,0 +1,332 @@
+*,
+::before,
+::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #333;
+    padding: clamp(20px, 2vw, 20px) 20px 20px;
+    background: linear-gradient(168.8deg, #9F7FFF 0%, #8055FE 96.38%);
+    color: whitesmoke;
+    font-family: Paytone One, sans-serif;
+}
+
+/*GENERAL*/
+h1 {
+    font-weight: 600;
+    font-size: 50px;
+    text-align: center;
+    padding-bottom: 60px;
+}
+
+h2 {
+    text-align: center;
+    color: #280A82;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+h3 {
+    font-size: clamp(16px, 3vh, 24px);
+}
+
+p {
+    font-size: 20px;
+    color: #A7A7A7;
+    font-family: Poppins, sans-serif;
+}
+
+/*HEADER*/
+.header h1 {
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    font-size: clamp(35px, 4.5vw, 45px);
+    ;
+}
+
+.logo-container {
+    display: block;
+    margin: 0 auto;
+    max-width: 800px;
+    position: relative;
+
+}
+
+.logo {
+    display: block;
+    margin: 0 auto;
+    width: clamp(40px, 140vw, 1200px);
+    max-height: 780px;
+    z-index: -1;
+    position: absolute;
+    left: -200px;
+}
+
+.container {
+    max-width: 800px;
+    background-color: white;
+    display: block;
+    margin: 0 auto;
+    border-radius: 40px;
+    filter: drop-shadow(0px 16px 32px rgba(54, 16, 166, 0.4));
+    padding: 20px 50px 0px;
+    text-align: center;
+    line-height: 40px;
+    position: relative;
+    transition: all 300ms;
+}
+
+.header {
+    position: relative;
+    max-width: 800px;
+    display: block;
+    margin: 0 auto;
+}
+
+/*SCORE*/
+.score {
+    width: 150px;
+    height: 50px;
+    padding-left: 10px;
+    background-color: white;
+    border-radius: 10px;
+    position: absolute;
+    right: 35px;
+    bottom: 5px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+.score p {
+    color: #280A82;
+    font-weight: 500;
+    font-family: Poppins, sans-serif;
+}
+
+/*RULES*/
+.container button {
+    padding: 10px 10px;
+    background-color: #FF9051;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0px 4px 32px rgba(255, 161, 107, 0.6);
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+    top: 30px;
+    transition: all 300ms;
+}
+
+.container button:hover {
+    transform: scale(1.1);
+}
+
+.rules {
+    padding-left: 10px;
+}
+
+.rules li {
+    font-size: clamp(16px, 5vw, 24px);
+    color: gray;
+    font-weight: 300;
+}
+
+/*THEME*/
+.themes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 20px;
+    padding-bottom: 50px;
+    margin: 0 100px;
+}
+
+.card-theme {
+    max-width: 500px;
+    aspect-ratio: 1/1;
+    background-color: gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 5px solid rgb(255, 255, 255);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+}
+
+.card-theme h3 {
+    letter-spacing: 3px;
+    font-size: 24px;
+    user-select: none;
+    pointer-events: none;
+}
+
+.pleasure {
+    background: linear-gradient(143.7deg, #F39500 0%, #FFC569 100%);
+}
+
+.scolar {
+    background: linear-gradient(143.7deg, #94BA21 0%, #D0F75B 100%);
+}
+
+.mature {
+    background: linear-gradient(143.7deg, #1D89BA 0%, #81D8FF 100%);
+}
+
+.improbable {
+    background: linear-gradient(143.7deg, #682266 0%, #FF20F9 100%);
+}
+
+.pleasure,
+.scolar,
+.mature,
+.improbable {
+    transition: all 300ms;
+    cursor: pointer;
+}
+
+.pleasure:hover,
+.scolar:hover,
+.mature:hover,
+.improbable:hover {
+    transform: scale(1.1);
+}
+
+/*PLEASURE*/
+.pleasureQ {
+    background: linear-gradient(143.7deg, #F39500 0%, #FFC569 100%);
+    font-family: Poppins, sans-serif;
+}
+
+.pleasureQ h3,
+.pleasureQ .question p,
+.pleasureQ .question-card p {
+    color: #280A82;
+    font-size: clamp(18px, 5vh, 24px);
+}
+
+/*SCOLAR*/
+.scolarQ {
+    background: linear-gradient(143.7deg, #94BA21 0%, #D0F75B 100%);
+    font-family: Poppins, sans-serif;
+}
+
+/*MATURE*/
+.matureQ {
+    background: linear-gradient(143.7deg, #1D89BA 0%, #81D8FF 100%);
+    font-family: Poppins, sans-serif;
+}
+
+/*IMPROBABLE*/
+.improbableQ {
+    background: linear-gradient(143.7deg, #682266 0%, #FF20F9 100%);
+    font-family: Poppins, sans-serif;
+}
+
+.improbableQ h2,
+.pleasureQ h2,
+.matureQ h2 {
+    color: white;
+    font-weight: 500;
+
+}
+
+.improbableQ h2:first-child,
+.matureQ h2:first-child,
+.pleasureQ h2:first-child,
+.scolarQ h2:first-child {
+    font-size: 24px;
+}
+
+.improbableQ h2:nth-child(2),
+.matureQ h2:nth-child(2),
+.pleasureQ h2:nth-child(2),
+.scolarQ h2:nth-child(2) {
+    font-weight: 600;
+    font-size: clamp(24px 5vh 30px);
+}
+
+/*QUESTIONS*/
+.questions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.question,
+.question-card {
+    max-width: auto;
+    background-color: white;
+    color: #DA8300;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    transition: all 300ms;
+    cursor: pointer;
+    font-size: 26px;
+    padding: 10px 50px;
+}
+
+.question-card {
+    cursor: auto;
+}
+
+.questions {
+    padding-bottom: 50px;
+}
+
+.question:hover {
+    transform: scale(1.1);
+}
+
+.question p {
+    color: black;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.question-card p {
+    color: #ff9c07;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+/*TOAST*/
+.toast {
+    width: 170px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 20px;
+    padding: 10px;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.25);
+    font-size: clamp(16px, 5vw, 20px);
+    transition: all 300ms;
+}
+
+/*MEDIA QUERIES*/
+@media (width < 769px) {
+    .themes {
+        margin: 0;
+    }
+}
+
+@media (width < 565px) {
+    .themes {
+        grid-template-columns: 1fr;
+        max-width: 220px;
+        margin: 0 auto;
+    }
+
+    .container {
+        padding: 20px 20px 0px;
+    }
+
+    .logo {
+        left: -110px;
+    }
+}

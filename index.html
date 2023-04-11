@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TTMC.js</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- GOOGLE FONT : POPPINS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <!-- GOOGLE FONT : PAYTONE ONE -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Paytone+One&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="header">
+        <h1>Tu te mets combien ?</h1>
+        <div class="score">
+            <p>Score: <span id="playerScore"></span></p>
+        </div>
+    </div>
+    <div class="logo-container">
+        <img class="logo" src="ressources/Illustrationquestionmarks.svg" alt="Logo TTMC">
+        <div class="container">
+            <h2>Règles du jeu</h2>
+            <div class="rules">
+                <ol>
+                    <li>Tu devras auto-évaluer tes connaissances de 1 à 10 sur une multitude de sujets. Des choses
+                        simples !<br>
+                        A chaque note correspond une question, plus ou moins difficile.</li>
+                    <li>Si tu réponds correctement, tu marqueras autant de points que la difficulté que tu auras choisi.
+                        (Question N° 8 = 800pts etc.)</li>
+                    <li>En revanche, si tu réponds mal, tu perdras des points</li>
+                    <li>Fort heureusement, tu commences avec un score de 1 000 - Si tu atteins le score de 5 000 tu as
+                        gagné la partie.</li>
+                </ol>
+            </div>
+
+            <button><img src="ressources/Icon - RightrightArrow.svg" alt="Boutton suivant"></button>
+
+        </div>
+    </div>
+
+    <script src="database.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
