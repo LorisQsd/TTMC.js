@@ -57,6 +57,7 @@ p {
 }
 
 .logo {
+    max-width: 100vw;
     display: block;
     margin: 0 auto;
     width: clamp(40px, 140vw, 1200px);
@@ -247,7 +248,7 @@ p {
 .pleasureQ h2:nth-child(2),
 .scolarQ h2:nth-child(2) {
     font-weight: 600;
-    font-size: clamp(24px 5vh 30px);
+    font-size: clamp(20px, 3vh, 30px);
 }
 
 /*QUESTIONS*/
@@ -318,7 +319,7 @@ p {
 @media (width < 565px) {
     .themes {
         grid-template-columns: 1fr;
-        max-width: 220px;
+        max-width: 200px;
         margin: 0 auto;
     }
 
