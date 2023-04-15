@@ -49,7 +49,7 @@ nextBtn.addEventListener("click", () => {
                 <h2>Il n'y a plus de question disponible dans la catégorie ${themeChoosed}</h2>
                 <h2>Veuillez choisir une autre catégorie</h2>
                 `
-                container.style.height = "500px"
+                container.style.height = "500px";
                 container.style.opacity = "1";
                 setTimeout(() => { container.style.opacity = "0"; }, 2000)
                 setTimeout(game, 2300)
@@ -100,14 +100,21 @@ nextBtn.addEventListener("click", () => {
 
                             function checkResult() {
                                 if (themeChoosed[randomIndex][questionID].goodAnswer === questionAttr) {
-                                    console.log("BONNE REPONSE")
-                                    question.style.backgroundColor = "green";
-                                    questionp.style.color = "white"
+                                    question.style.backgroundImage = "linear-gradient(to right, #a8ff78, #78ffd6)";
+                                    questionp.style.color = "black"
 
                                     score += (questionID.slice(1)) * 100;
                                     displayScore.textContent = score;
+                                    if (score >= 3000) {
+                                        createToast(`Vous avez atteint le score de ${score}. Vous avez donc gagné la partie, FÉLICITATIONS !`, "linear-gradient(168.8deg, #9F7FFF 0%, #8055FE 96.38%)", "white");
+                                        const toaster = container.querySelector(".toast")
+                                        toaster.style.width = "350px";
+                                        toaster.style.fontSize = "30px";
+                                        toaster.style.fontWeight = "bold";
+                                        return;
+                                    }
 
-                                    createToast(`Tu as gagné <strong> ${(questionID.slice(1)) * 100} </strong> points !`, "green", "white")
+                                    createToast(`Tu as gagné <strong> ${(questionID.slice(1)) * 100} </strong> points !`, "linear-gradient(to right, #a8ff78, #78ffd6)", "black")
                                     const toast = container.querySelector(".toast")
                                     toast.animate([{ transform: "scale(1)" }, { transform: "scale(1.2)" }], 1300, 1)
                                     setTimeout(() => { container.style.opacity = "0" }, 1500)
@@ -115,23 +122,20 @@ nextBtn.addEventListener("click", () => {
 
                                     // On retire la question de la base de donnée de manière à ne pas retomber dessus
                                     themeChoosed.splice(randomIndex, 1)
-                                    console.log(themeChoosed)
                                 } else {
-                                    console.log("MAUVAISE REPONSE")
-                                    question.style.backgroundColor = "crimson";
+                                    question.style.backgroundImage = "linear-gradient(to right, #f5567b, #fd674c)";
                                     questionp.style.color = "white"
 
                                     score -= (questionID.slice(1)) * 100;
                                     displayScore.textContent = score;
 
-                                    createToast(`Tu as perdu <strong> ${(questionID.slice(1)) * 100} </strong> points ! :(`, "crimson", "white")
+                                    createToast(`Tu as perdu <strong> ${(questionID.slice(1)) * 100} </strong> points ! :(`, "linear-gradient(to right, #f5567b, #fd674c)", "white")
                                     const toast = container.querySelector(".toast")
                                     toast.animate([{ transform: "scale(1)" }, { transform: "scale(1.2)" }], 1300, 1)
                                     setTimeout(() => { container.style.opacity = "0" }, 1500)
                                     setTimeout(game, 1600)
 
                                     themeChoosed.splice(randomIndex, 1)
-                                    console.log(themeChoosed)
                                 }
                             }
                         })
@@ -173,14 +177,16 @@ function removeClass() {
     }
 }
 
-function createToast(status, bgcolor, txtcolor, e) {
+function createToast(status, bgcolor, txtcolor) {
     const toastInfo = document.createElement("p");
     toastInfo.className = "toast";
 
     toastInfo.innerHTML = status;
-    toastInfo.style.backgroundColor = bgcolor;
+    toastInfo.style.backgroundImage = bgcolor;
     toastInfo.style.color = txtcolor;
     container.appendChild(toastInfo)
+
+    if(score >= 3000) return;
 
     setTimeout(() => {
         toastInfo.style.opacity = "0"
